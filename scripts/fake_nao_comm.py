@@ -5,7 +5,6 @@ import rospy
 import urllib2
 import os
 import time
-#from festival import *
 from rapp_fake_robot.srv import Say, Record, RecognizeWord
 
 file_name="/home/max/workspaces/rapp/ls_mic_app/sound.ogg"
@@ -22,25 +21,10 @@ def handle_record(req):
 	subprocess.check_call([path_to_script_record, str(req.recordingTime), file_name])
 	return file_name
 
-'''def handle_recognize_word(req):
-	print "NAO is requested to recognize one of those words:"
-	subprocess.check_call(['./src/rapp_fake_robot/scripts/speech.sh'])
-	
-	for w in req.wordsList:
-		print(" - %s" % w)
-
-	word = raw_input('Enter your word: ')
-	if word in req.wordsList:
-		return word
-	else:
-		return "Empty"
-'''
-
 def fake_nao_comm():
 	rospy.init_node('fake_nao_comm')
 	s = rospy.Service('rapp_say', Say, handle_say)
 	s = rospy.Service('rapp_record', Record, handle_record)
-	#s = rospy.Service('rapp_get_recognized_word', RecognizeWord, handle_recognize_word)
 	print "Ready to synthesize words and record sound"
 	rospy.spin()
 

@@ -34,5 +34,5 @@ if __name__ == "__main__":
         print usage()
         sys.exit(1)
     print "Text to synthesize %s Response %s"%(text, say_client(text))
-    #print "Recording sound for %s seconds in %s file" % (time, record_client(time))
+    print "Recording sound for %s seconds in %s file" % (time, record_client(time))
     sys.exit(1)
