@@ -25,6 +25,7 @@ def fake_nao_comm():
 	rospy.init_node('fake_nao_comm')
 	s = rospy.Service('rapp_say', Say, handle_say)
 	s = rospy.Service('rapp_record', Record, handle_record)
+	#s = rospy.Service('rapp_get_recognized_word', RecognizeWord, handle_recognize_word)
 	print "Ready to synthesize words and record sound"
 	rospy.spin()
 
