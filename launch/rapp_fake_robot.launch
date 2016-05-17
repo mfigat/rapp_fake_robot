@@ -1,0 +1,3 @@
+<launch>  
+  <node pkg="rapp_fake_robot" name="rapp_fake_server" type="fake_nao_comm.py" output="screen"/>
+</launch>
