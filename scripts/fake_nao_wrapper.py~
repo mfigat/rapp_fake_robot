@@ -29,7 +29,7 @@ def rapp_record(time_arg):
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
 
-def rapp_speech_detection():
+def rapp_speech_detection(path, audio_source, user):
     try:
 
         rospack = rospkg.RosPack()
