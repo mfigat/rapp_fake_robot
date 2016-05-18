@@ -14,6 +14,9 @@ message_generation
    Say.srv
    Record.srv
    RecognizeWord.srv
+   SpeechRecognitionSphinx4ConfigureSrv.srv
+   SpeechRecognitionSphinx4Srv.srv
+   SpeechRecognitionSphinx4TotalSrv.srv
  )
 
 

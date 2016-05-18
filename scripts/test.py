@@ -17,3 +17,4 @@ if __name__ == "__main__":
         sys.exit(1)
     print "Text to synthesize %s\nResponse: %s\n"%(text, rapp_say(text))
     print "Recording sound for %s seconds to %s file" % (time, rapp_record(time))
+     print rapp_speech_detection()
