@@ -7,7 +7,7 @@ import os
 import time
 from rapp_fake_robot.srv import Say, Record, RecognizeWord
 
-file_name="/home/max/workspaces/rapp/ls_mic_app/sound.ogg"
+file_name="/home/max/workspaces/rapp/ls_mic_app/sound.wav"
 path_to_script_say='./../workspaces/rapp/ls_mic_app/rapp-robot-nao/src/rapp_fake_robot/scripts/say.sh'
 path_to_script_record='./../workspaces/rapp/ls_mic_app/rapp-robot-nao/src/rapp_fake_robot/scripts/record.sh'
 
