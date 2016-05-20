@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: latin-1 -*-
 
 import subprocess
 import rospy
@@ -26,28 +27,5 @@ def rapp_record(time_arg):
         record = rospy.ServiceProxy('rapp_record', Record)
         resp1 = record(time_arg)
         return resp1.recordedFileDest
-    except rospy.ServiceException, e:
-        print "Service call failed: %s"%e
-
-def rapp_speech_detection():
-    try:
-
-        rospack = rospkg.RosPack()
-        aux = rospack.get_path('rapp_testing_tools') + '/test_data'
-
-        req = SpeechRecognitionSphinx4TotalSrvRequest()
-        req.language = 'el'
-        req.words = ['ναι', 'όχι']
-        req.grammar = []
-        req.sentences = req.words
-        req.path = aux + '/nao_wav_d05_a1.wav'
-        req.audio_source = 'nao_wav_4_ch'
-        req.user = 'rapp'
-        record = rospy.ServiceProxy('/rapp/rapp_speech_detection_sphinx4/batch_speech_to_text', SpeechRecognitionSphinx4TotalSrv)
-        resp1 = record(req)
-        print "Error " + resp1.error
-        if ( resp1.words != ['ναι', 'όχι', 'ναι'] ):
-            print "Word miss-match"
-        return resp1.words
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
